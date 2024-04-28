@@ -13,6 +13,31 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      animation: {
+        "fade-in-slow": "fade-in 1.5s forwards",
+        "bounce-horizontal": "bounce-horizontal 1s 0.75s infinite",
+      },
+      colors: {
+        "main-blue": "#0077B9",
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "100",
+          },
+        },
+        "bounce-horizontal": {
+          "0%,100%": {
+            transform: "translateX(-1rem)",
+          },
+          "50%": {
+            transform: "translateX(1rem)",
+          },
+        },
+      },
     },
   },
   plugins: [],
