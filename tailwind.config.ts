@@ -14,7 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
-        "fade-in-slow": "fade-in 1.5s forwards",
+        "fade-in-slow": "fade-in 1.5s 1s forwards",
         "bounce-horizontal": "bounce-horizontal 1s 0.75s infinite",
       },
       colors: {
