@@ -2,11 +2,18 @@ import { PropsWithChildren } from "react";
 
 type AlignProps = {
   className?: string;
+  direction?: "col" | "row";
 };
 
-const Align = ({ children, className = "" }: PropsWithChildren<AlignProps>) => {
+const Align = ({
+  children,
+  className = "",
+  direction = "col",
+}: PropsWithChildren<AlignProps>) => {
   return (
-    <div className={[className, "flex flex-col"].join(" ")}>{children}</div>
+    <div className={[className, `flex flex-${direction}`].join(" ")}>
+      {children}
+    </div>
   );
 };
 
