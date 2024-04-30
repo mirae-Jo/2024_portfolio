@@ -1,4 +1,5 @@
 "use client";
+import useHover from "@/hooks/useHover";
 import { PropsWithChildren, useRef, useState } from "react";
 
 type Props = {
@@ -11,15 +12,7 @@ const TipContainer = ({
   text,
   className = "",
 }: PropsWithChildren<Props>) => {
-  const [isHover, setHover] = useState(false);
-
-  const handleMouseEnter = () => {
-    setHover(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHover(false);
-  };
+  const { isHover, handleMouseEnter, handleMouseLeave } = useHover();
 
   return (
     <div
@@ -27,7 +20,7 @@ const TipContainer = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
       <span
-        className={`absolute bottom-full text-lg ${
+        className={`absolute bottom-full text-lg  ${
           isHover && "hidden"
         } mb-[2rem]`}>
         {text}
