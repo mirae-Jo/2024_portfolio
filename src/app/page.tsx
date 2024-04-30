@@ -5,6 +5,7 @@ import { Purple_Purse } from "next/font/google";
 import rightArrow from "@/../../public/right_arrow.svg";
 import Image from "next/image";
 import Link from "next/link";
+import TipContainer from "./_components/main/Tip";
 
 const purple = Purple_Purse({
   subsets: ["latin"],
@@ -24,13 +25,15 @@ export default function Home() {
             </Align.Left>
             <Align.Right>
               <span>DEVELOPER</span>
-              <Link href={"/info"} className='mb-[0.5rem]'>
-                <Image
-                  className='animate-bounce-horizontal'
-                  src={rightArrow}
-                  alt={"인포 페이지로 이동하기"}
-                />
-              </Link>
+              <TipContainer text='click me' className='mb-[0.5rem]'>
+                <Link href={"/info"}>
+                  <Image
+                    className='animate-bounce-horizontal'
+                    src={rightArrow}
+                    alt={"인포 페이지로 이동하기"}
+                  />
+                </Link>
+              </TipContainer>
             </Align.Right>
           </Align>
           <Align className='gap-[1.6rem] w-full pr-[9rem] text-[3.6rem] text-main-blue'>
