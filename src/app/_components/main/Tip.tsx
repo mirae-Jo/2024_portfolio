@@ -19,12 +19,9 @@ const TipContainer = ({
       className={["relative", className].join(" ")}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
-      <span
-        className={`absolute bottom-full text-lg  ${
-          isHover && "hidden"
-        } mb-[2rem]`}>
-        {text}
-      </span>
+      {!isHover && (
+        <span className={`absolute bottom-full text-lg mb-[2rem]`}>{text}</span>
+      )}
       {children}
     </div>
   );
