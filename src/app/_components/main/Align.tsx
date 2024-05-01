@@ -5,7 +5,7 @@ type AlignProps = {
   direction?: "col" | "row";
 };
 
-const Align = ({
+const Flex = ({
   children,
   className = "",
   direction = "col",
@@ -17,11 +17,11 @@ const Align = ({
   );
 };
 
-const AlignLeft = ({ children }: PropsWithChildren) => {
+const Start = ({ children }: PropsWithChildren) => {
   return <div className={`flex-1`}>{children}</div>;
 };
 
-const AlignRight = ({ children }: PropsWithChildren) => {
+const End = ({ children }: PropsWithChildren) => {
   return (
     <div
       className={`flex-1 flex flex-row justify-end gap-[4.2rem] items-center`}>
@@ -30,7 +30,7 @@ const AlignRight = ({ children }: PropsWithChildren) => {
   );
 };
 
-Align.Left = AlignLeft;
-Align.Right = AlignRight;
+Flex.Start = Start;
+Flex.End = End;
 
-export default Align;
+export default Flex;

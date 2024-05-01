@@ -1,4 +1,4 @@
-import Align from "./_components/main/Align";
+import Flex from "./_components/main/Align";
 import BgCoverImage from "./_components/main/BgCoverImage";
 import mainWaveGif from "@/../../public/wave.gif";
 import { Purple_Purse } from "next/font/google";
@@ -18,12 +18,12 @@ export default function Home() {
       <BgCoverImage src={mainWaveGif} alt={"main wave gif"} />
       <div className='bg-white/70 absolute top-0 left-0 w-full h-full animate-fade-in-slow opacity-0'>
         <div className='absolute bottom-[16rem] left-0 right-[6.5rem] flex flex-col gap-[5.7rem]'>
-          <Align
+          <Flex
             className={`${purple.className} text-[9.6rem] text-main-blue w-[82.2rem] h-[22.5rem] leading-[9.6rem] self-end`}>
-            <Align.Left>
+            <Flex.Start>
               <span>FRONT-END</span>
-            </Align.Left>
-            <Align.Right>
+            </Flex.Start>
+            <Flex.End>
               <span>DEVELOPER</span>
               <TipContainer text='click me' className='mb-[0.5rem]'>
                 <Link href={"/info"}>
@@ -34,17 +34,17 @@ export default function Home() {
                   />
                 </Link>
               </TipContainer>
-            </Align.Right>
-          </Align>
-          <Align className='gap-[1.6rem] w-full pr-[9rem] text-[3.6rem] text-main-blue'>
-            <Align.Right>
+            </Flex.End>
+          </Flex>
+          <Flex className='gap-[1.6rem] w-full pr-[9rem] text-[3.6rem] text-main-blue'>
+            <Flex.End>
               <span>2024</span>
-            </Align.Right>
+            </Flex.End>
             <hr className='border-main-blue' />
-            <Align.Right>
+            <Flex.End>
               <span>MIRAE's Portfolio</span>
-            </Align.Right>
-          </Align>
+            </Flex.End>
+          </Flex>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Align from "../main/Align";
+import Flex from "../main/Align";
 
 type Props = {
   path: string;
@@ -14,13 +14,13 @@ const Navigation = ({ path }: Props) => {
 
   return (
     <nav className='w-screen h-[7rem] bg-white fixed top-0 px-[4rem] drop-shadow-md'>
-      <Align direction='row' className='h-full items-center '>
-        <Align.Left>
+      <Flex direction='row' className='h-full items-center '>
+        <Flex.Start>
           <h1 className='text-[3.6rem] text-[#333]'>
             <Link href='/'>MIRAE</Link>
           </h1>
-        </Align.Left>
-        <Align.Right>
+        </Flex.Start>
+        <Flex.End>
           <ul className='flex flex-row text-[2.8rem] gap-[5rem] text-[#aaa] font-light'>
             <li>
               <Link href='/' className={getTextGray(!isInfo)}>
@@ -33,8 +33,8 @@ const Navigation = ({ path }: Props) => {
               </Link>
             </li>
           </ul>
-        </Align.Right>
-      </Align>
+        </Flex.End>
+      </Flex>
     </nav>
   );
 };
