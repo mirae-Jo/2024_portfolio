@@ -6,5 +6,13 @@ html {
   font-size: 62.5%;
 }
 body {
-  overflow: hidden; /* Hide scrollbars */
+  /* Hide scrollbars */
+  /* overflow: hidden;  */
+}
+* {
+  box-sizing: border-box;
+}
+
+.contact-input {
+  @apply bg-[#eee] rounded-none placeholder:text-[2rem] placeholder:indent-[1rem] indent-[1rem] text-[2rem];
 }
