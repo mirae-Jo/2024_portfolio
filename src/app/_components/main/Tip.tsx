@@ -20,7 +20,14 @@ const TipContainer = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
       {!isHover && (
-        <span className={`absolute bottom-full text-lg mb-[2rem]`}>{text}</span>
+        <span
+          data-tip={true}
+          onMouseMoveCapture={(e) => {
+            e.stopPropagation();
+          }}
+          className={`absolute bottom-full text-[1.2rem] leading-[1.5rem] mb-[2rem] left-1/2 -translate-x-1/2 text-center break-keep min-w-24`}>
+          {text}
+        </span>
       )}
       {children}
     </div>
