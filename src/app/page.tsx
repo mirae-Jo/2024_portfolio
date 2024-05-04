@@ -40,7 +40,7 @@ export default function Home() {
             </Flex.End>
             <hr className='border-main-blue' />
             <Flex.End>
-              <span>MIRAE's Portfolio</span>
+              <span>{`MIRAE's Portfolio`}</span>
             </Flex.End>
           </Flex>
         </div>
