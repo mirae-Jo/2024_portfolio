@@ -5,18 +5,24 @@ import { useMutation } from "@tanstack/react-query";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { validName, validPhone } from "@/validator/validator";
+import { useAutoPhone } from "@/hooks/useAutoPhone";
 
 const queryClient = new QueryClient();
 
 const ContactMeModal = () => {
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phone, handleAuthPhone] = useAutoPhone();
   const [message, setMessage] = useState("");
   const [isAgree, setAgree] = useState(false);
+
   const handleAgree = (e: ChangeEvent<HTMLInputElement>) => {
     setAgree(e.target.checked);
   };
+
   const { handleToggleModal } = useModal();
+
+  const isCanSubmit = validName(name) && validPhone(phone) && isAgree;
 
   const {
     mutate: postContactInfo,
@@ -68,7 +74,7 @@ const ContactMeModal = () => {
                 />
                 <input
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={handleAuthPhone}
                   placeholder='phone number'
                   className='w-[22rem] h-[4.5rem] contact-input'
                   required
@@ -88,9 +94,9 @@ const ContactMeModal = () => {
             </div>
             <button
               type='submit'
-              disabled={!isAgree}
+              disabled={!isCanSubmit}
               className={
-                isAgree
+                isCanSubmit
                   ? `bg-main-blue w-[8rem] h-[5.2rem] mx-auto my-0 rounded-[1rem] text-[2rem] text-white`
                   : `bg-[#bbb] w-[8rem] h-[5.2rem] mx-auto my-0 rounded-[1rem] text-[2rem] text-white`
               }>

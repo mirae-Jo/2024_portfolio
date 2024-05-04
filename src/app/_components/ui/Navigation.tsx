@@ -13,7 +13,7 @@ const Navigation = ({ path }: Props) => {
   const getTextGray = (condition: boolean) => (condition ? textGray : "");
 
   return (
-    <nav className='w-screen h-[7rem] bg-white fixed top-0 px-[4rem] drop-shadow-md'>
+    <nav className='w-screen h-[7rem] bg-white fixed top-0 px-[4rem] drop-shadow-md z-20 '>
       <Flex direction='row' className='h-full items-center '>
         <Flex.Start>
           <h1 className='text-[3.6rem] text-[#333]'>
