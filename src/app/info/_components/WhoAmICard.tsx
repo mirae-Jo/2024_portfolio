@@ -1,7 +1,7 @@
 import React from "react";
 import Header3 from "./Header3";
 import Image from "next/image";
-import myProfileImg from "@/../../public/조미래.jpg";
+import myProfileImg from "@/assets/조미래.jpg";
 import Link from "next/link";
 
 const WhoAmICard = () => {
