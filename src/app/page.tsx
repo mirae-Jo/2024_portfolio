@@ -1,23 +1,19 @@
 import Flex from "./_components/main/Align";
 import BgCoverImage from "./_components/main/BgCoverImage";
-import mainWaveGif from "@/../../public/wave.gif";
-import { Purple_Purse } from "next/font/google";
-import rightArrow from "@/../../public/right_arrow.svg";
+import mainWaveGif from "@/assets/wave.gif";
+import rightArrow from "@/assets/right_arrow.svg";
 import Image from "next/image";
 import Link from "next/link";
 import TipContainer from "./_components/main/Tip";
-
-const purple = Purple_Purse({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+import { purple } from "@/fonts/purple";
+import { sans } from "@/fonts/sans";
 
 export default function Home() {
   return (
     <div className='w-screen h-screen relative'>
       <BgCoverImage src={mainWaveGif} alt={"main wave gif"} />
       <div className='bg-white/70 absolute top-0 left-0 w-full h-full animate-fade-in-slow opacity-0'>
-        <div className='absolute bottom-[16rem] left-0 right-[6.5rem] flex flex-col gap-[5.7rem]'>
+        <div className='absolute bottom-[7rem] left-0 right-[6.5rem] flex flex-col gap-[5.7rem]'>
           <Flex
             className={`${purple.className} text-[9.6rem] text-main-blue w-[82.2rem] h-[22.5rem] leading-[9.6rem] self-end`}>
             <Flex.Start>
@@ -25,7 +21,9 @@ export default function Home() {
             </Flex.Start>
             <Flex.End>
               <span>DEVELOPER</span>
-              <TipContainer text='click me' className='mb-[0.5rem]'>
+              <TipContainer
+                text='click me'
+                className={`mb-[0.5rem] ${sans.className}`}>
                 <Link href={"/info"}>
                   <Image
                     className='animate-bounce-horizontal'

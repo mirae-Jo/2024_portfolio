@@ -7,7 +7,7 @@ const IntroSection = () => {
   return (
     <section>
       <Header2>introduction</Header2>
-      <div className='mt-[5rem] flex flex-col gap-[5rem]'>
+      <div className='mt-[5rem] flex flex-col gap-[7rem]'>
         <WhoAmICard />
         <DeveloperCard />
       </div>

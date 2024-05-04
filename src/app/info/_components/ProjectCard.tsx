@@ -1,15 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import camperspotMainImg from "@/assets/camperspot_main_img.png";
 
 const ProjectCard = () => {
   return (
     <div className='flex flex-row gap-[5rem]'>
       <div className='w-[30rem] h-[34rem] bg-[#eee]'>
-        <Image src={""} alt={""} />
+        <Image
+          src={camperspotMainImg}
+          alt={"캠퍼스팟 메인 이미지"}
+          className='object-fit w-[30rem] h-[34rem]'
+        />
       </div>
-      <div className='w-[65rem] h-[34rem] text-[3.2rem] text-[#333] flex flex-col justify-between'>
-        <h4>캠퍼스팟</h4>
+      <div className='w-[65rem] h-[34rem] text-[3rem] text-[#333] flex flex-col justify-between'>
+        <h4>
+          <Link href={"https://camperspot.vercel.app/"}>캠퍼스팟</Link>
+        </h4>
         <Link href={"https://github.com/h0ngwon/Camperspot"}>Github</Link>
         <p className='text-[2.4rem]'>
           프로젝트 캠퍼스팟은 5명의 프론트엔드 개발자와 1명의 디자이너로

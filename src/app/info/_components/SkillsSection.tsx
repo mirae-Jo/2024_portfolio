@@ -5,7 +5,7 @@ const SkillsSection = () => {
   return (
     <section>
       <Header2>skills</Header2>
-      <div className='mt-[5rem] grid grid-cols-5 gap-[3rem] text-[3.2rem] text-center text-[#333]'>
+      <div className='mt-[7rem] grid grid-cols-4 gap-[3rem] text-[3rem] text-center text-[#333]'>
         <div>HTML</div>
         <div>CSS</div>
         <div>JAVASCRIPT</div>

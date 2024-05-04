@@ -1,4 +1,5 @@
 "use client";
+
 import React, {
   cloneElement,
   createContext,
@@ -7,6 +8,8 @@ import React, {
   useContext,
   useState,
 } from "react";
+import CloseBtnSvg from "../svg/CloseBtnSvg";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 interface ModalContextProps {
   isShow: boolean;
@@ -31,9 +34,17 @@ const ModalContainer = ({ children }: PropsWithChildren) => {
     handleToggleModal,
   };
 
+  const client = new QueryClient();
+
   return (
-    <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
+    <ModalContext.Provider value={value}>
+      <QueryClientProvider client={client}>{children}</QueryClientProvider>
+    </ModalContext.Provider>
   );
+};
+
+export const useModal = () => {
+  return useContext(ModalContext);
 };
 
 export const Toggle = ({ children }: PropsWithChildren) => {
@@ -51,7 +62,6 @@ export const Content = ({ children }: PropsWithChildren) => {
       {isShow && (
         <div className='fixed w-screen h-full bg-black bg-opacity-40 backdrop-blur-[20px] z-10 top-0'>
           {children}
-          <Close />
         </div>
       )}
     </>
@@ -61,6 +71,12 @@ export const Content = ({ children }: PropsWithChildren) => {
 export const Close = () => {
   const { handleToggleModal } = useContext(ModalContext);
 
-  return <div onClick={handleToggleModal}>Close</div>;
+  return (
+    <div
+      onClick={handleToggleModal}
+      className='fixed top-[3rem] right-[3rem] hover:cursor-pointer'>
+      <CloseBtnSvg />
+    </div>
+  );
 };
 export default ModalContainer;

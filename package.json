@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.43.0",
+    "@tanstack/react-query": "^5.32.1",
     "next": "14.2.2",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -5,7 +5,7 @@ const DeveloperCard = () => {
   return (
     <div className='flex flex-col gap-[1.5rem]'>
       <Header3>어떤 개발자가 되고 싶나요?</Header3>
-      <div className='text-[2.4rem] text-[#333] flex flex-col gap-[1.5rem]'>
+      <div className='text-[2rem] text-[#333] flex flex-col gap-[1.5rem]'>
         <p>
           라는 질문을 받았을 때, “사용자 경험을 우선하는 개발자", “회사와 동료의
           편의까지 고려하는 개발자" 같은 답변이 떠올랐고 정말로 그렇게

@@ -16,7 +16,7 @@ const InfoPage = async () => {
   return (
     <div>
       <Navigation path={"/info"} />
-      <div className='w-[100rem] h-auto my-0 mx-auto pt-[12rem] flex flex-col gap-[13rem]'>
+      <div className='w-[100rem] h-auto my-0 mx-auto pt-[16rem] flex flex-col gap-[13rem]'>
         <IntroSection />
         <SkillsSection />
         <TrainingSection />
@@ -30,7 +30,7 @@ const InfoPage = async () => {
           <ContactMeModal />
         </Content>
       </ModalContainer>
-      <footer className='mt-[13rem] w-screen h-[7rem] bg-white text-center leading-[7rem] text-[2rem] text-[#333]'>
+      <footer className='mt-[13rem] w-screen h-[7rem] bg-white text-center leading-[7rem] text-[1.2rem] text-[#333]'>
         © 2024. 조미래 all rights reserved.
       </footer>
     </div>

@@ -6,7 +6,7 @@ const ProjectSection = () => {
   return (
     <section>
       <Header2>project</Header2>
-      <div className='mt-[5rem] flex flex-col gap-[5rem]'>
+      <div className='mt-[7rem] flex flex-col gap-[5rem]'>
         <ProjectCard />
         <ProjectCard />
       </div>
