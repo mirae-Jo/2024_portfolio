@@ -60,7 +60,7 @@ export const Content = ({ children }: PropsWithChildren) => {
   return (
     <>
       {isShow && (
-        <div className='fixed w-screen h-full bg-black bg-opacity-40 backdrop-blur-[20px] z-10 top-0'>
+        <div className='fixed w-screen h-full bg-black bg-opacity-40 backdrop-blur-[20px] z-30 top-0'>
           {children}
         </div>
       )}
